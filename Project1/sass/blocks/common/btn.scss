@@ -1,0 +1,24 @@
+.btn {
+  padding: rem(3px) rem(17px);
+  background: $red;
+  color: #fff;
+  text-decoration: none;
+  border-radius: rem(5px);
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: rem(13px);
+  line-height: rem(30px);
+  cursor: pointer;
+  @include ubuntu(medium);
+  &:hover {
+    background-color: darken($red, 7%);
+  }
+}
+
+
+.reviews__btn {
+	background: $black;
+	&:hover {
+    background-color: lighter($black, 7%);
+  }
+}

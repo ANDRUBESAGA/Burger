@@ -1,0 +1,17 @@
+.hamburger__menu__open {
+  border-top: 10px #000 solid;
+  border-bottom: 10px #000 solid;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin: 30px auto 0; }
+  .hamburger__menu__open:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    border-top: 10px #000 solid;
+    margin-top: -5px; }

@@ -1,0 +1,128 @@
+.team {
+  background: url('../img/bg/team_bg.png') center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.team__container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  background: rgba(#2f3234, .93);
+  padding: rem(65px) rem(81px) 0 rem(85px);
+  display: flex;
+  flex-direction: column;
+  
+  @include tablets {
+    width: 100%;
+    left: 0;
+  }
+  @include phones {
+    padding: 0;
+  }
+}
+.team__title {
+  margin-bottom: rem(55px);
+  @include tablets {
+    text-align: center;
+  }
+  @include phones {
+    margin-top: rem(80px);
+  }
+}
+.team-acco__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: .5s;
+  @include tablets {
+    flex-direction: column;
+  }
+  @include tablets {
+    text-align: center;
+    
+  }
+}
+
+.team-acco__item {
+  &.--active {
+  .team-acco__trigger {
+    color: $yellow;
+    margin-bottom: rem(10px);
+
+    &:before {
+      transform: rotate(-180deg);
+    }
+  }
+  .team-acco__content {
+    margin-bottom: rem(30px)
+  }
+  
+}
+ @include tablets {
+    text-align: center;
+  }
+}
+
+.team-acco__trigger {
+  color: #fff;
+  font-size: rem(14px);
+  @include gagalin;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0;
+  margin-bottom: rem(25px);
+  @include tablets {
+    font-size: rem(24px);
+  }
+
+  &:before {
+    content: "";
+    height: 0;
+    width: 0;
+    border: 8px solid transparent;
+    border-top-color: $yellow;
+    border-bottom-width: 0px;
+    margin-right: 8px;
+
+  }
+
+}
+.team-acco__pic {
+  text-align: center;
+  width: 30%;
+  margin-right: rem(15px);
+}
+.team-acco__pic-img {
+  height: rem(100px);
+  max-width: none;
+  @include cover;
+  border-radius: 50%;
+}
+
+.team-acco__text {
+  color: #fff;
+  width: 62%;
+}
+.team-acco__pic, .team-acco__text {
+  @include tablets {
+    width: 100%;
+  }
+}
+.team-acco__text-title {
+  @include ubuntu(bold);
+  font-size: rem(14px);
+  color: #fff;
+  margin-bottom: rem(14px);
+}
+.team-acco__text-content {
+  @include ubuntu(light);
+  color: #fff;
+  line-height: rem(24px);
+  font-size: rem(14px);
+}

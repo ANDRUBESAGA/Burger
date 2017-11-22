@@ -1,0 +1,128 @@
+.nav__hamburger {
+  display: none;
+  margin-left: 30px;
+  margin-top: -25px;
+
+  @include tablets {
+    display: flex;
+  }
+}
+.nav__hamburger--link {
+ width: 30px;
+ height: 30px;
+ margin-top: rem(25px);
+  &.--active {
+    .hamburger__menu__open {
+      display: none;
+    }
+    .hamburger__menu__close, {
+      display: flex;
+    }
+  }
+}
+
+.hamburger__menu__open {
+  border: 2px #fff solid;
+  border-radius: 4px;
+  width: 30px;
+  cursor: pointer;
+  position: relative;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    left:-2px;
+    width: 100%;
+    border: 2px #fff solid;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    left:-2px;
+    width: 100%;
+    border: 2px #fff solid;
+    border-radius: 4px;
+    margin-top: 22px;
+    }
+}
+
+.hamburger__menu__close {
+  display: none;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 13px;
+    border: 2px #fff solid;
+    border-radius: 4px;
+    transform: rotate(45deg);
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 13px;
+    border: 2px #fff solid;
+    border-radius: 4px;
+    transform: rotate(-45deg);
+  }
+}
+
+.hamburger__menu--list {
+  @include tablets {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(46, 49, 51, .99);
+    z-index: 2;
+    padding-top: 30%;
+    &.--active {
+      display: flex;
+    }
+  } 
+}
+
+.hamburger__menu--item {
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &:after {
+    content: "";
+    display: flex;
+    width: rem(7px);
+    height: rem(7px);
+    border-radius: 50%;
+    background: #fff;   
+    margin: rem(24px) 0;
+  }
+  &:last-child::after {
+    display: none;
+  }
+}
+.nav__link {
+  @include tablets {
+    font-size: rem(24px);
+  }
+}

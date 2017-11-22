@@ -1,0 +1,91 @@
+.map {
+  background: url('../img/bg/map_bg.png') center center no-repeat;
+  background-size: cover;
+}
+.footer {
+	background: url('../img/content/footer.png')  bottom center no-repeat;
+ 	background-size: cover;
+ 	position: absolute;
+ 	bottom: 0;
+ 	left: 0;
+ 	right: 0;
+ 	width: 100%;
+ 	padding: rem(10px) 0;
+}
+.footer_container {
+	display: flex;
+	flex-direction: row;
+  align-items: center;
+  @include phones {
+  	flex-direction: column;
+  }
+}
+.footer__info {
+	width: 50%;
+	@include phones {
+		width: 100%;
+		text-align: center;
+	}
+}
+.footer__address {
+ @include ubuntu(light);
+ color: #fff;
+ font-size: rem(14px);
+}
+.footer__phone {
+	color: $red;
+	text-decoration: none;
+	padding-top: 5px;
+	@include ubuntu(bold);
+	font-size: rem(14px); 
+	&:before {
+		content: "";
+		display: inline-block;
+		margin-right: 5px;
+		background: url("../img/icons/phone.svg") no-repeat center center;
+		width: 10px;
+		height: 10px;
+		color: $red;
+
+	}
+
+}
+.footer__social {
+	width: 50%;
+	text-align: right;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  @include phones {
+  	width: 100%;
+  	justify-content: center;
+  	margin-top: 5px;
+  }
+}
+
+.socials {
+  position: relative;
+  top: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  margin-left: rem(15px);
+}
+
+.socials__link {
+  display: inline-block;
+  max-width: rem(23px);
+  max-height: rem(20px);
+  opacity: .3;
+  transition: .3s;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.socials__link-icon {
+  width: rem(20px);
+  height: rem(20px);
+}

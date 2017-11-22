@@ -1,0 +1,16 @@
+.section-title_middle {
+	color: #ffffff;
+  @include gagalin;
+  font-size: rem(14px);
+  font-weight: 400;
+  line-height: rem(28px);
+  padding-bottom: rem(30px);
+  text-transform: uppercase;
+  text-decoration: none;
+  @include tablets {
+  	padding-bottom: 0;
+  }
+  @include phones {
+  	font-size: rem(24px);
+  }
+}
