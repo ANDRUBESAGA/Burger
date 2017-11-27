@@ -49,10 +49,11 @@
 }
 
 .team-acco__item {
+  margin-bottom: 25px;
   &.--active {
   .team-acco__trigger {
     color: $yellow;
-    margin-bottom: rem(10px);
+    margin-bottom: rem(5px);
 
     &:before {
       transform: rotate(-180deg);
@@ -76,7 +77,7 @@
   display: inline-flex;
   align-items: center;
   padding-bottom: 0;
-  margin-bottom: rem(25px);
+  margin-bottom: rem(5px);
   @include tablets {
     font-size: rem(24px);
   }

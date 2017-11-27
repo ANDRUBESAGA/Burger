@@ -920,20 +920,20 @@ footer {
     .team-acco__content {
       text-align: center; } }
 
-.team-acco__item.--active .team-acco__trigger {
-  color: #f9b43b;
-  margin-bottom: 0.625rem; }
-  .team-acco__item.--active .team-acco__trigger:before {
-    -webkit-transform: rotate(-180deg);
-    -ms-transform: rotate(-180deg);
-    transform: rotate(-180deg); }
-
-.team-acco__item.--active .team-acco__content {
-  margin-bottom: 1.875rem; }
-
-@media screen and (max-width: 768px) {
-  .team-acco__item {
-    text-align: center; } }
+.team-acco__item {
+  margin-bottom: 25px; }
+  .team-acco__item.--active .team-acco__trigger {
+    color: #f9b43b;
+    margin-bottom: 0.3125rem; }
+    .team-acco__item.--active .team-acco__trigger:before {
+      -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      transform: rotate(-180deg); }
+  .team-acco__item.--active .team-acco__content {
+    margin-bottom: 1.875rem; }
+  @media screen and (max-width: 768px) {
+    .team-acco__item {
+      text-align: center; } }
 
 .team-acco__trigger {
   color: #fff;
@@ -949,7 +949,7 @@ footer {
   -ms-flex-align: center;
   align-items: center;
   padding-bottom: 0;
-  margin-bottom: 1.5625rem; }
+  margin-bottom: 0.3125rem; }
   @media screen and (max-width: 768px) {
     .team-acco__trigger {
       font-size: 1.5rem; } }
@@ -1027,6 +1027,8 @@ footer {
     flex-grow: 1; }
     .menu-acco__item.--active .menu-acco__trigger-text {
       color: #f9b43b; }
+    .menu-acco__item.--active .menu-acco__content {
+      display: block; }
 
 .menu-acco__trigger {
   width: 5rem;
@@ -1076,6 +1078,7 @@ footer {
   color: #fff;
   padding: 3.75rem 1.875rem;
   width: 100%;
+  max-width: 33.75rem;
   line-height: 1.8; }
 
 .reviews__list {
@@ -1156,6 +1159,33 @@ footer {
 @media screen and (max-width: 480px) {
   .reviews__btn {
     content: 'Читать отзыв'; } }
+
+.popup {
+  display: none;
+  border-radius: 5px;
+  width: 37.5rem; }
+  @media screen and (max-width: 768px) {
+    .popup {
+      width: 25.9375rem; } }
+  @media screen and (max-width: 480px) {
+    .popup {
+      width: 20rem; } }
+  .popup h2 {
+    font-family: 'Gagalin-Regular', Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: #2f3234; }
+  .popup p {
+    font-family: 'Ubuntu', Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.75rem;
+    color: #2f3234; }
+
+.fancybox-close-small:after {
+  color: #e35028;
+  font: 30px/30px Arial,"Helvetica Neue",Helvetica,sans-serif; }
 
 .order {
   background: url("../img/bg/order_bg.png") center center no-repeat;
@@ -1687,6 +1717,12 @@ footer {
     font-family: 'Gagalin-Regular', Helvetica, sans-serif;
     font-size: 1.875rem;
     margin-right: 1.875rem; }
+
+.list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 .nav__hamburger {
   display: none;

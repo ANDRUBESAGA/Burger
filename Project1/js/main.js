@@ -10,6 +10,8 @@ $(document).ready(() => {
 
   	let openComponents = $(".slider__components").toggleClass("--active");  	
 	});
+
+
  	$(".team-acco__trigger").on("click", (e) => {
  		e.preventDefault();
 
@@ -46,45 +48,13 @@ $(document).ready(() => {
  				"height" : 0
  			})
  		}
-
  	});
- 	$(".menu-acco__trigger").on("click", (e) => {
- 		e.preventDefault();
 
- 		const $thisAccMenu = $(e.currentTarget);
- 		const containerAccMenu = $thisAccMenu.closest(".menu-acco");
- 		const itemAccMenu = $thisAccMenu.closest(".menu-acco__item");
- 		const itemsAccMenu = $(".menu-acco__item", containerAccMenu);
- 		const otherContentAccMenu = $(".menu-acco__content", containerAccMenu);
- 		const contentAccMenu = $(".menu-acco__content", itemAccMenu);
- 		const texBlockAccMenu = $(".menu-acco__text", itemAccMenu);
- 		const regWidth = texBlockAccMenu.outerWidth();	
-
- 		if (!itemAccMenu.hasClass("--active")) {
- 			itemsAccMenu.removeClass("--active");
- 			itemAccMenu.addClass("--active");
-
- 			otherContentAccMenu.css({
- 				"width" : 0
- 			})
-	 			if (regWidth > 500) {
-	 			contentAccMenu.css({
-	 				"width" : regWidth
-	 			})
-	 			} else {
-	 			contentAccMenu.css({
-	 				"width" : 500
-	 			})
-	 			}
- 		} else {
-
- 			itemAccMenu.removeClass("--active");
- 			contentAccMenu.css({
- 				"width" : 0
- 			})
- 		}
-
- 	});
- 	
- 	
+		//fancybox
+		$(function () {
+			$("[data-fancybox]").fancybox({
+			// Options will go here
+			});
+		});
 });
+
