@@ -1413,6 +1413,8 @@ footer {
   background: -webkit-linear-gradient(top, #f9b43b 0%, #eb8d38 50%, #f9b43b 100%);
   background: -o-linear-gradient(top, #f9b43b 0%, #eb8d38 50%, #f9b43b 100%);
   background: linear-gradient(to bottom, #f9b43b 0%, #eb8d38 50%, #f9b43b 100%); }
+  .burgers .container {
+    position: initial; }
 
 .burgers__container {
   display: -webkit-box;
@@ -1443,7 +1445,7 @@ footer {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 1.5625rem; }
+  margin: 0 2.1875rem; }
 
 .burger__slider--left {
   position: absolute;
@@ -1640,6 +1642,30 @@ footer {
 
 .slick-slide img {
   display: unset; }
+
+.slick-next.slick-arrow {
+  position: absolute;
+  right: 0%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: scale(1.5) rotate(-90deg);
+  -ms-transform: scale(1.5) rotate(-90deg);
+  transform: scale(1.5) rotate(-90deg);
+  background: url(/img/icons/arrow-scroll.png) no-repeat 50% 50%;
+  z-index: 2; }
+
+.slick-prev.slick-arrow {
+  position: absolute;
+  left: 0%;
+  border: none;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: scale(1.5) rotate(90deg);
+  -ms-transform: scale(1.5) rotate(90deg);
+  transform: scale(1.5) rotate(90deg);
+  background: url(/img/icons/arrow-scroll.png) no-repeat 50% 50%;
+  z-index: 2; }
 
 .nav__hamburger {
   display: none;

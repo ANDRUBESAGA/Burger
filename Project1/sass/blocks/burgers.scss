@@ -1,6 +1,9 @@
 .burgers {
 	position: relative;
 	background: linear-gradient(to bottom, #f9b43b 0%, #eb8d38 50%, #f9b43b 100%);
+	.container {
+		position: initial;
+	}
 }
 .burgers__container {
 	display: flex;
@@ -18,7 +21,7 @@
 	height: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 rem(25px);
+	margin: 0 rem(35px);
 
 }
 .burger__slider--left {
@@ -196,4 +199,24 @@
 }
 .slick-slide img {
  display: unset;
+}
+.slick-next.slick-arrow {
+	position: absolute; 
+	right: 0%;
+	border: none;
+	width: 40px;
+	height: 40px;
+	transform: scale(1.5)rotate(-90deg);
+	background: url(/img/icons/arrow-scroll.png) no-repeat 50% 50%;
+	z-index: 2;
+}
+.slick-prev.slick-arrow {
+	position: absolute; 
+	left: 0%;
+	border: none;
+	width: 40px;
+	height: 40px;
+	transform: scale(1.5)rotate(90deg);
+	background: url(/img/icons/arrow-scroll.png) no-repeat 50% 50%;
+	z-index: 2;
 }
