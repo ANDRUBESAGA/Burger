@@ -50,11 +50,17 @@ $(document).ready(() => {
  		}
  	});
 
-		//fancybox
-		$(function () {
-			$("[data-fancybox]").fancybox({
-			// Options will go here
-			});
-		});
+		
+});
+//fancybox
+$(function () {
+	$("[data-fancybox]").fancybox({
+	// Options will go here
+	});
 });
 
+//slick
+	$(document).ready(function(){
+		$('.burgers__container').slick({
+		});
+	});
