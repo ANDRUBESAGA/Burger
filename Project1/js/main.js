@@ -64,3 +64,19 @@ $(function () {
 		$('.burgers__container').slick({
 		});
 	});
+ 	
+	function initMap() {
+		var mapEl = document.getElementById('map');
+        var uluru = {
+			lat: -25.363, 
+			lng: 131.044
+		};
+        var map = new google.maps.Map(mapEl, {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
