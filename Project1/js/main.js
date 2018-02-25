@@ -67,16 +67,114 @@ $(function () {
  	
 	function initMap() {
 		var mapEl = document.getElementById('map');
+		var image = "../img/icons/map-marker.svg";
+		var style = 
+		[
+			{
+				"featureType": "landscape",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"lightness": 60
+					}
+				]
+			},
+			{
+				"featureType": "road.local",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"lightness": 40
+					},
+					{
+						"visibility": "on"
+					}
+				]
+			},
+			{
+				"featureType": "transit",
+				"stylers": [
+					{
+						"saturation": -100
+					},
+					{
+						"visibility": "simplified"
+					}
+				]
+			},
+			{
+				"featureType": "administrative.province",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "water",
+				"stylers": [
+					{
+						"visibility": "on"
+					},
+					{
+						"lightness": 30
+					}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#ef8c25"
+					},
+					{
+						"lightness": 40
+					}
+				]
+			},
+			{
+				"featureType": "road.highway",
+				"elementType": "geometry.stroke",
+				"stylers": [
+					{
+						"visibility": "off"
+					}
+				]
+			},
+			{
+				"featureType": "poi.park",
+				"elementType": "geometry.fill",
+				"stylers": [
+					{
+						"color": "#b6c54c"
+					},
+					{
+						"lightness": 40
+					},
+					{
+						"saturation": -40
+					}
+				]
+			},
+			{}
+		]
         var uluru = {
-			lat: -25.363, 
-			lng: 131.044
+			lat: 59.939095, 
+			lng: 30.315868
 		};
         var map = new google.maps.Map(mapEl, {
           zoom: 12,
-          center: uluru
+		  center: uluru,
+		  styles: style
         });
         var marker = new google.maps.Marker({
           position: uluru,
-          map: map
+          map: map,
+		  icon: image
         });
       }

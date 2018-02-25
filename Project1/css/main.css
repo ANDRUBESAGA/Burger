@@ -1300,8 +1300,9 @@ footer {
   font-family: 'Ubuntu', Helvetica, sans-serif;
   font-weight: 300; }
 
-.map {
-  background: url("../img/bg/map_bg.png") center center no-repeat;
+#map {
+  height: 93%;
+  width: 100%;
   background-size: cover; }
 
 .footer {
