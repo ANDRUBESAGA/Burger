@@ -468,7 +468,11 @@ body {
 
 .maincontent {
   height: 100%;
-  min-height: 650px; }
+  min-height: 650px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  will-change: transform; }
 
 h1,
 h2,
