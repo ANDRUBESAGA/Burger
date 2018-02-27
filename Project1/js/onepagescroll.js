@@ -9,8 +9,8 @@ const performanceTransition = sectionEq => {
         '-webkit-transform': `translateY(${position})`
     }); 
 
-    sections.eq(sectionEq).addClass('active');
-     .siblings().remoweClass('active');
+    sections.eq(sectionEq).addClass('active')
+     .siblings().removeClass('active');
 }
 
 
