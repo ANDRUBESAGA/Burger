@@ -30,21 +30,44 @@ const performanceTransition = sectionEq => {
     }, 1300)
 }
 
-
+const difineSections = sections => {
+    const activeSection = sections.filter('.active');
+    return {
+      activeSection: activeSection,
+      nextSection: activeSection.next(),
+      prevSection: activeSection.prev()
+    }
+}
 
 $('.wrapper').on('wheel', e => {
     const deltaY = e.originalEvent.deltaY;
-    const activeSection = sections.filter('.active');
-    const nextSection = activeSection.next();
-    const prevSection = activeSection.prev();
+    const section = difineSections(sections);
 
-    if (deltaY > 0 && nextSection.length)  { //scrool down
+    if (deltaY > 0 && section.nextSection.length)  { //scrool down
         
-        performanceTransition(nextSection.index());
+        performanceTransition(section.nextSection.index());
     }
 
-    if (deltaY < 0 && prevSection.length)  { //scrool up
+    if (deltaY < 0 && section.prevSection.length)  { //scrool up
 
-        performanceTransition(prevSection.index());
+        performanceTransition(section.prevSection.index());
+    }
+});
+
+$(document).on('keydown', e => {
+    const section = difineSections(sections);
+
+    if(inScroll) return
+
+    switch (e.keyCode) {
+        case 40: //вверх
+            if (!section.nextSection.length) return;
+            performanceTransition(section.nextSection.index());
+            break;
+    
+        case 38: //вверх
+            if (!section.prevSection.length) return;
+            performanceTransition(section.prevSection.index());
+            break;
     }
 });

@@ -1831,7 +1831,10 @@ footer {
   border-radius: 50%;
   position: relative;
   display: block;
-  border: 1px solid transparent; }
+  border: 1px solid transparent;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
   .fixed-menu__link:hover {
     border-color: #fff; }
   .fixed-menu__link:before {
