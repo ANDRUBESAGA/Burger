@@ -60,10 +60,11 @@ $(function () {
 });
 
 //slick
-	$(document).ready(function(){
-		$('.burgers__container').slick({
+	
+		$(document).ready(function(){
+			$('.burgers__container').slick({
+			});
 		});
-	});
  	
 	function initMap() {
 		var mapEl = document.getElementById('map');

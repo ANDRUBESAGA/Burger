@@ -39,20 +39,25 @@ const difineSections = sections => {
     }
 }
 
-$('.wrapper').on('wheel', e => {
-    const deltaY = e.originalEvent.deltaY;
-    const section = difineSections(sections);
-
-    if (deltaY > 0 && section.nextSection.length)  { //scrool down
-        
-        performanceTransition(section.nextSection.index());
-    }
-
-    if (deltaY < 0 && section.prevSection.length)  { //scrool up
-
-        performanceTransition(section.prevSection.index());
-    }
+$('.wrapper').on({
+    wheel : e => {
+        const deltaY = e.originalEvent.deltaY;
+        const section = difineSections(sections);
+    
+        if (deltaY > 0 && section.nextSection.length)  { //scrool down
+            
+            performanceTransition(section.nextSection.index());
+        }
+    
+        if (deltaY < 0 && section.prevSection.length)  { //scrool up
+    
+            performanceTransition(section.prevSection.index());
+        }
+    },
+    touchmove: e => (e.preventDefault());
 });
+
+
 
 $(document).on('keydown', e => {
     const section = difineSections(sections);
@@ -70,4 +75,14 @@ $(document).on('keydown', e => {
             performanceTransition(section.prevSection.index());
             break;
     }
+});
+
+
+$('[data-scroll-to]').on('click', e=> {
+
+    e.preventDefault();
+    const scrollData = $(e.currentTarget)
+    const sectionIndex = parseInt(scrollData.attr('data-scroll-to'));
+
+    performanceTransition(sectionIndex);
 });

@@ -37,6 +37,10 @@ body {
   height: 100%;
   min-height: 650px;
   overflow: hidden;
+
+  @include tabalets { 
+    min-height: auto;
+  }
 }
 
 .maincontent {
@@ -44,6 +48,10 @@ body {
   min-height: 650px;
   transition: 1s;
   will-change: transform;
+  
+  @include tabalets { 
+    min-height: auto;
+  }
 }
 
 // tag styles reset
