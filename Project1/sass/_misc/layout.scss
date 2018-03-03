@@ -38,7 +38,7 @@ body {
   min-height: 650px;
   overflow: hidden;
 
-  @include tabalets { 
+  @include tablets { 
     min-height: auto;
   }
 }
@@ -49,7 +49,7 @@ body {
   transition: 1s;
   will-change: transform;
   
-  @include tabalets { 
+  @include tablets { 
     min-height: auto;
   }
 }

@@ -3,6 +3,12 @@ const sections = $('.section');
 
 let inScroll = false ;
 
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile();
+
+
+
+
 const swithMenuActiveClass = sectionEq => {
     $('.fixed-menu__item').eq(sectionEq).addClass('active')
         .siblings().removeClass('active');
@@ -54,7 +60,7 @@ $('.wrapper').on({
             performanceTransition(section.prevSection.index());
         }
     },
-    touchmove: e => (e.preventDefault());
+    touchmove: e => (e.preventDefault())
 });
 
 
@@ -77,8 +83,17 @@ $(document).on('keydown', e => {
     }
 });
 
+if (isMobile) {
+    $(function() {
+        $(window).swipe({
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+            }
+        })
+    }); 
+}
 
-$('[data-scroll-to]').on('click', e=> {
+
+$('[data-scroll-to]').on('click touchstart', e=> {
 
     e.preventDefault();
     const scrollData = $(e.currentTarget)
