@@ -45,20 +45,29 @@ const difineSections = sections => {
     }
 }
 
+const scrollToSection = direction => {
+    const section = difineSections(sections)
+
+    if (inScroll) return;
+
+    if(direction === 'up' && section.nextSection.length) { //scrool down
+        performanceTransition(section.nextSection.index())
+    }
+
+    if(direction === 'down' && section.prevSection.length) { //scrool up
+        performanceTransition(section.prevSection.index())
+
+    }
+}
+
 $('.wrapper').on({
     wheel : e => {
         const deltaY = e.originalEvent.deltaY;
-        const section = difineSections(sections);
-    
-        if (deltaY > 0 && section.nextSection.length)  { //scrool down
-            
-            performanceTransition(section.nextSection.index());
-        }
-    
-        if (deltaY < 0 && section.prevSection.length)  { //scrool up
-    
-            performanceTransition(section.prevSection.index());
-        }
+        let direction = (deltaY > 0) 
+        ? 'up' 
+        : 'down'
+
+        scrollToSection(direction);
     },
     touchmove: e => (e.preventDefault())
 });
@@ -87,6 +96,7 @@ if (isMobile) {
     $(function() {
         $(window).swipe({
             swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                scrollToSection(direction);
             }
         })
     }); 

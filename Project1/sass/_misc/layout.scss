@@ -93,7 +93,8 @@ footer {
 }
 
 .section {
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.31);
 //  min-width: 940px;
   min-height: rem(650px);
