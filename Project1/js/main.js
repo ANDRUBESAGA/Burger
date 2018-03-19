@@ -65,7 +65,9 @@ $(function () {
 			$('.burgers__container').slick({
 			});
 		});
- 	
+	 
+		
+//map settins 
 	function initMap() {
 		var mapEl = document.getElementById('map');
 		var image = "../img/icons/map-marker.svg";
@@ -164,18 +166,30 @@ $(function () {
 			},
 			{}
 		]
+	
         var uluru = {
 			lat: 59.939095, 
 			lng: 30.315868
 		};
         var map = new google.maps.Map(mapEl, {
-          zoom: 12,
+          zoom: 11,
 		  center: uluru,
 		  styles: style
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-		  icon: image
-        });
-      }
+        var markers = locations.map(function(location, i) {
+			return new google.maps.Marker({
+			  position: location,
+			  icon: image
+			});
+		});
+
+		var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+		
+	}
+			var locations = [
+				{lat: 59.914722, lng: 30.493762},
+				{lat: 59.944877, lng: 30.382525},
+				{lat: 59.890923, lng: 30.313860},
+				{lat: 59.972079, lng: 30.309741}
+			]
