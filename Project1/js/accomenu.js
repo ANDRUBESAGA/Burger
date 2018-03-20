@@ -3,5 +3,5 @@
  	for(var i = 0; i < menuItem.length; i++) { 
  		menuItem.onclick = function () {
  			this.classList.toggle('--active');
- 		}
- 		
+		 }
+	
