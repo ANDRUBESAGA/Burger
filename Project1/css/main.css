@@ -998,8 +998,6 @@ footer {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden; }
-  .menu-acco__item.--active .menu-acco__trigger-text {
-    color: #f9b43b; }
 
 .menu-acco__trigger {
   width: 5rem;
@@ -1013,6 +1011,8 @@ footer {
   text-decoration: none;
   position: relative;
   padding: 20px; }
+  .menu-acco__trigger.active .menu-acco__trigger-text {
+    color: #f9b43b; }
 
 .menu-acco__trigger-text {
   font-size: 2.5rem;
@@ -1039,8 +1039,11 @@ footer {
   line-height: 1.8;
   opacity: 0;
   visibility: hidden;
-  max-width: 0px; }
-  .menu-acco__content.-active {
+  max-width: 0px;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s; }
+  .menu-acco__content.active {
     max-width: 540px;
     padding: 3.75rem 1.875rem;
     opacity: 1;

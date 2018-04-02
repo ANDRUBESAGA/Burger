@@ -1,7 +1,7 @@
-	var menuItem = document.getElementsByClassName('menu-acco__item')
 
- 	for(var i = 0; i < menuItem.length; i++) { 
- 		menuItem.onclick = function () {
- 			this.classList.toggle('--active');
-		 }
-	
+$(document).ready(function () {
+    $('.menu-acco__trigger').click(function () {
+        $(this).toggleClass('active').next().toggleClass('active');
+        $('.menu-acco__trigger').not(this).removeClass('active').next().removeClass('active');
+    });
+});

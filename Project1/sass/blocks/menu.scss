@@ -24,16 +24,6 @@
 .menu-acco__item {
 	display: flex;
 	overflow: hidden; 
-
-	&.--active {
-		
-		.menu-acco__trigger-text {
-			color: $yellow;
-		}
-		.menu-acco__content {
-		}
-
-	}
 }
 
 .menu-acco__trigger {
@@ -43,7 +33,13 @@
 	@include cover;
 	text-decoration: none;
   	position: relative;
- 	padding: 20px;
+	 padding: 20px;
+
+	 &.active {
+		.menu-acco__trigger-text {
+			color: $yellow;
+		}
+	}
 }
 
 .menu-acco__trigger-text {
@@ -71,7 +67,8 @@
 	opacity: 0;
 	visibility: hidden;
 	max-width: 0px;
-	&.-active {
+	transition: 1s;
+	&.active {
 		max-width: 540px;
 		padding: rem(60px) rem(30px);
 		opacity: 1;
